@@ -14,17 +14,8 @@
             min-height: 100vh;
         }
         .card-bg { background-color: #ffffff; border: 2px solid #CAE4F4; }
-        .virtual-card { transition: all 0.3s; cursor: pointer; }
-        .virtual-card:hover { transform: scale(1.02); }
-        .virtual-card:active { transform: scale(0.95); }
-        
-        /* อนิเมชั่นขยับเบาๆ */
-        @keyframes pulse-gentle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        .animate-pulse-gentle { animation: pulse-gentle 2s infinite; }
-        
+        .virtual-card { transition: all 0.2s; cursor: pointer; }
+        .virtual-card:active { transform: scale(0.98); }
         ::-webkit-scrollbar { width: 0px; }
     </style>
 </head>
@@ -35,14 +26,14 @@
     </div>
 
     <div class="max-w-[400px] w-full space-y-5">
-        <div class="text-center flex justify-center items-center gap-2 animate-pulse-gentle">
-            <svg class="w-6 h-6 text-[#CAE4F4]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <h1 class="text-2xl font-bold" style="color: #CAE4F4;">Nyxor Store</h1>
-            <svg class="w-6 h-6 text-[#CAE4F4]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <div class="text-center flex justify-center items-center gap-2">
+            <svg class="w-6 h-6 text-[#2d3748]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <h1 class="text-3xl font-bold" style="color: #2d3748;">Nyxor Store</h1>
+            <svg class="w-6 h-6 text-[#2d3748]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         </div>
 
         <div class="card-bg rounded-3xl p-4 shadow-sm">
-            <img src="https://lh3.googleusercontent.com/d/1C6-uLxghH6VqzMcymrMpsu6OjEQFUazl" alt="Account" class="w-full rounded-2xl mb-4 transition-transform hover:scale-[1.01]">
+            <img src="https://lh3.googleusercontent.com/d/1C6-uLxghH6VqzMcymrMpsu6OjEQFUazl" alt="Account" class="w-full rounded-2xl mb-4">
 
             <div class="space-y-3">
                 <div class="virtual-card rounded-2xl p-4" style="background-color: #EBFAFF; border: 1px solid #CAE4F4;" onclick="copyText('898-235317-9', this)">
@@ -72,7 +63,7 @@
                     <div class="text-xs" style="color: #4a5568;">ชนัญญา</div>
                 </div>
 
-                <div class="virtual-card rounded-2xl p-4 shadow-md animate-bounce" style="background-color: #CAE4F4;" onclick="copyText('เติมเกมLeo', this)">
+                <div class="virtual-card rounded-2xl p-4 shadow-md" style="background-color: #CAE4F4;" onclick="copyText('เติมเกมLeo', this)">
                     <div class="flex justify-between items-center">
                         <span class="font-bold" style="color: #2d3748;">โน๊ตสลิป: เติมเกมLeo</span>
                         <span class="text-[10px] px-2 py-0.5 rounded-full bg-white">คัดลอก</span>
@@ -84,19 +75,4 @@
                 </div>
                 
                 <div class="text-center font-bold flex justify-center items-center gap-1" style="color: #CAE4F4;">
-                    เติมเกมไว้ใจ Nyxor <svg class="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function copyText(text, element) {
-            navigator.clipboard.writeText(text);
-            const toast = document.getElementById('toast');
-            toast.style.opacity = '1';
-            setTimeout(() => { toast.style.opacity = '0'; }, 2000);
-        }
-    </script>
-</body>
-</html>
+                    เติมเกมไว้ใจ Nyxor <svg class="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.
