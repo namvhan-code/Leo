@@ -15,23 +15,11 @@
             min-height: 100vh;
         }
         
-        @keyframes float-up-down {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(10deg); }
-        }
-        @keyframes float-left-right {
-            0%, 100% { transform: translateX(0px) rotate(0deg); }
-            50% { transform: translateX(15px) rotate(-10deg); }
-        }
-        @keyframes pulse-soft {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
+        @keyframes float-up-down { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-15px) rotate(10deg); } }
+        @keyframes float-left-right { 0%, 100% { transform: translateX(0px) rotate(0deg); } 50% { transform: translateX(15px) rotate(-10deg); } }
+        @keyframes pulse-soft { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.1); opacity: 1; } }
         @keyframes spin-slow { 100% { transform: rotate(360deg); } }
-        @keyframes dash-animation {
-            from { stroke-dashoffset: 0; }
-            to { stroke-dashoffset: -24; }
-        }
+        @keyframes dash-animation { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -24; } }
         .animate-dash { animation: dash-animation 1s linear infinite; }
         .anim-float-1 { animation: float-up-down 4s ease-in-out infinite; }
         .anim-float-2 { animation: float-up-down 5s ease-in-out infinite 1.5s; }
@@ -45,7 +33,7 @@
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid #CAE4F4;
-            box-shadow: 0 20px 50px -10px rgba(202, 228, 244, 0.3);
+            box-shadow: 0 20px 50px -10px rgba(202, 228, 244, 0.5);
         }
         .virtual-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .virtual-card:hover { transform: translateY(-4px); }
@@ -55,73 +43,64 @@
     
     <script>
         tailwind.config = {
-            theme: { extend: { colors: { pink: { 500: '#CAE4F4', 600: '#a3cce6', 700: '#5c3d26' } } } }
+            theme: {
+                extend: {
+                    colors: {
+                        pink: { 500: '#CAE4F4', 600: '#a3cce6', 700: '#5c3d26' }
+                    }
+                }
+            }
         }
     </script>
 </head>
-<body class="flex flex-col items-center py-6 px-4 text-slate-800 relative overflow-x-hidden">
+<body class="flex flex-col items-center py-6 px-4 text-pink-700 relative overflow-x-hidden">
 
     <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        </div>
+        <svg class="absolute top-[5%] left-[10%] w-8 h-8 text-pink-300 anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    </div>
 
-    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-blue-500/95 backdrop-blur-sm text-white px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm">
-        คัดลอกเลขบัญชีแล้ว
+    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-pink-500/95 backdrop-blur-sm text-white px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm border border-pink-400">
+        คัดลอกข้อความแล้ว
     </div>
 
     <div class="max-w-[420px] w-full relative z-10 space-y-5 pb-10">
         <div class="text-center pt-2 pb-2 relative">
-            <h1 class="text-2xl font-bold tracking-tight text-blue-500">Nyxor</h1>
-            <p class="text-sm font-medium text-blue-400 mt-1">Payment & Checkout</p>
+            <h1 class="text-2xl font-bold tracking-tight text-pink-500">Nyxor</h1>
+            <p class="text-sm font-medium text-pink-400 mt-1">Payment & Checkout</p>
         </div>
 
         <div class="glass-card rounded-[40px] p-3 relative z-10">
-            <div class="relative p-2 rounded-[36px] z-10">
-                <div class="rounded-[28px] overflow-hidden relative shadow-sm border-[4px] border-white">
-                    <img src="https://blogger.googleusercontent.com/img/a/EjK1lbCmFjVvWus7pqJklqC2LxPN5of1tc7dRQb8V_F1tN-2H63jHf0VU72JrDl4zD0Rt4aJicT18E0lU9Xyx87cnP7OOGS0o9tyY1H-bgrB85PIpdx8kcoVBXdJpevYkCPUNF5rJUTpUxwFl42Qjw==.jfif" alt="Nyxor Payment" class="w-full h-auto object-cover">
-                </div>
+            <div class="rounded-[28px] overflow-hidden relative shadow-sm border-[4px] border-white">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj822-uQWz19x-mJm3oK-gJ1b5J3h0b6l7u-7j9h1i9_A2i1g1B9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5b9b5/s320/image.png" alt="Nyxor" class="w-full h-auto object-cover">
             </div>
 
             <div class="p-4 pt-6 space-y-5">
-                <div class="text-center space-y-3">
-                    <p class="text-[15px] font-medium text-slate-700">
-                        เลขบัญชีตามนี้เลยค่า <br>
-                        ชื่อบัญชี <span class="text-blue-600 font-bold">ธนกฤต แซ่จิว</span> เท่านั้นน้า!!
-                    </p>
-                </div>
+                <p class="text-center font-medium text-pink-700">ชื่อบัญชี ธนกฤต แซ่จิว</p>
 
                 <div class="space-y-4">
-                    <div class="virtual-card bg-blue-100 rounded-[24px] p-5 cursor-pointer border border-blue-200" onclick="copyText('898-235317-9', this)">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-blue-800">SCB</span>
-                            <button class="bg-white text-blue-600 text-xs px-3 py-1 rounded-full font-bold">คัดลอก</button>
-                        </div>
-                        <div class="text-xl font-bold text-blue-900 tracking-widest">898-235317-9</div>
+                    <div class="virtual-card bg-gradient-to-br from-pink-400 to-pink-500 rounded-[24px] p-5 cursor-pointer" onclick="copyText('898-235317-9', this)">
+                        <span class="text-white font-bold">SCB: 898-235317-9</span>
                     </div>
-
-                    <div class="virtual-card bg-orange-50 rounded-[24px] p-5 cursor-pointer border border-orange-200" onclick="copyText('0980086337', this)">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-orange-800">TrueMoney (ธนกฤต)</span>
-                            <button class="bg-white text-orange-600 text-xs px-3 py-1 rounded-full font-bold">คัดลอก</button>
-                        </div>
-                        <div class="text-xl font-bold text-orange-900 tracking-widest">0980086337</div>
+                    <div class="virtual-card bg-gradient-to-br from-pink-300 to-pink-400 rounded-[24px] p-5 cursor-pointer" onclick="copyText('0980086337', this)">
+                        <span class="text-white font-bold">TrueMoney: 0980086337 (ธนกฤต)</span>
                     </div>
-
-                    <div class="virtual-card bg-orange-50 rounded-[24px] p-5 cursor-pointer border border-orange-200" onclick="copyText('0936207180', this)">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-orange-800">TrueMoney (ชนัญญา)</span>
-                            <button class="bg-white text-orange-600 text-xs px-3 py-1 rounded-full font-bold">คัดลอก</button>
+                    <div class="virtual-card bg-gradient-to-br from-pink-300 to-pink-400 rounded-[24px] p-5 cursor-pointer" onclick="copyText('0936207180', this)">
+                        <span class="text-white font-bold">TrueMoney: 0936207180 (ชนัญญา)</span>
+                    </div>
+                    
+                    <div class="virtual-card bg-gradient-to-r from-pink-500 to-pink-600 rounded-[24px] p-5 cursor-pointer" onclick="copyText('เติมเกมLeo', this)">
+                        <div class="flex justify-between items-center">
+                            <span class="text-white font-bold">โน๊ตสลิป: เติมเกมLeo</span>
+                            <button class="bg-white text-pink-600 text-xs px-3 py-1 rounded-full font-bold">คัดลอก</button>
                         </div>
-                        <div class="text-xl font-bold text-orange-900 tracking-widest">0936207180</div>
                     </div>
                 </div>
 
-                <div class="bg-red-50 p-4 rounded-2xl text-center text-red-600 font-bold">
-                    โอนวอที่ลีโอแจ้งเท่านั้นนะคั้บ โอนผิดยึดยอดเท่านั้น
+                <div class="bg-pink-100 p-3 rounded-2xl text-pink-800 text-sm text-center font-bold">
+                    โอนวอดิโอลีโอแจ้งทำนั้นนะคั้บ โอนผิดยึดยอดเท่านั้น
                 </div>
 
-                <div class="text-center font-bold text-blue-500 pt-4">
-                    เติมเกมไว้ใจ Nyxor
-                </div>
+                <div class="text-center font-bold text-pink-500">เติมเกมไว้ใจ Nyxor</div>
             </div>
         </div>
     </div>
