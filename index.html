@@ -10,69 +10,70 @@
     <style>
         body { 
             font-family: 'Prompt', sans-serif; 
-            background: linear-gradient(135deg, #CAE4F4, #EBFAFF, #FEF4DD);
+            background: linear-gradient(135deg, #CAE4F4, #EBFAFF);
             min-height: 100vh;
         }
-        .card-bg { background-color: #ffffff; border: 2px solid #CAE4F4; }
-        .virtual-card { transition: all 0.2s; cursor: pointer; }
+        .card-bg { background-color: #ffffff; border: 3px solid #CAE4F4; }
+        .virtual-card { transition: all 0.3s; cursor: pointer; }
+        .virtual-card:hover { transform: translateY(-2px); }
         .virtual-card:active { transform: scale(0.98); }
         ::-webkit-scrollbar { width: 0px; }
     </style>
 </head>
 <body class="flex flex-col items-center py-6 px-4 text-gray-800">
 
-    <div id="toast" class="fixed bottom-8 bg-[#CAE4F4] text-[#2d3748] px-6 py-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 z-50 font-bold">
-        คัดลอกข้อมูลเรียบร้อย
+    <div id="toast" class="fixed bottom-8 bg-[#CAE4F4] text-[#2d3748] px-6 py-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 z-50 font-bold border-2 border-white">
+        คัดลอกข้อมูลเรียบร้อยแล้วค่า ✨
     </div>
 
     <div class="max-w-[400px] w-full space-y-5">
         <div class="text-center">
-            <h1 class="text-2xl font-bold" style="color: #CAE4F4;">Nyxor Store</h1>
+            <h1 class="text-2xl font-bold text-[#CAE4F4] drop-shadow-sm">Nyxor Store ⭐</h1>
         </div>
 
-        <div class="card-bg rounded-3xl p-4 shadow-sm">
-            <img src="https://lh3.googleusercontent.com/d/1C6-uLxghH6VqzMcymrMpsu6OjEQFUazl" alt="Account" class="w-full rounded-2xl mb-4">
+        <div class="card-bg rounded-[30px] p-4 shadow-xl">
+            <img src="https://lh3.googleusercontent.com/d/1C6-uLxghH6VqzMcymrMpsu6OjEQFUazl" alt="Account" class="w-full rounded-[20px] mb-4 border-2 border-[#CAE4F4]">
 
-            <div class="space-y-3">
-                <div class="virtual-card rounded-2xl p-4" style="background-color: #EBFAFF; border: 1px solid #CAE4F4;" onclick="copyText('898-235317-9', this)">
+            <div class="space-y-4">
+                <div class="virtual-card rounded-2xl p-4 bg-[#EBFAFF] border border-[#CAE4F4]" onclick="copyText('898-235317-9', this)">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold" style="color: #2d3748;">ธนาคาร SCB</span>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full" style="background-color: #CAE4F4;">คัดลอก</span>
+                        <span class="font-bold text-[#2d3748]">ธนาคาร SCB ❤️</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#CAE4F4] text-[#2d3748]">คัดลอก</span>
                     </div>
-                    <div class="font-bold text-lg" style="color: #2d3748;">898-235317-9</div>
-                    <div class="text-xs" style="color: #4a5568;">ธนกฤต แซ่จิว</div>
+                    <div class="font-bold text-lg text-[#2d3748]">898-235317-9</div>
+                    <div class="text-xs text-gray-500">ธนกฤต แซ่จิว</div>
                 </div>
 
-                <div class="virtual-card rounded-2xl p-4" style="background-color: #FEF4DD; border: 1px solid #CAE4F4;" onclick="copyText('0980086337', this)">
+                <div class="virtual-card rounded-2xl p-4 bg-[#EBFAFF] border border-[#CAE4F4]" onclick="copyText('0980086337', this)">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold" style="color: #2d3748;">TrueMoney</span>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full" style="background-color: #CAE4F4;">คัดลอก</span>
+                        <span class="font-bold text-[#2d3748]">TrueMoney ⭐</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#CAE4F4] text-[#2d3748]">คัดลอก</span>
                     </div>
-                    <div class="font-bold text-lg" style="color: #2d3748;">0980086337</div>
-                    <div class="text-xs" style="color: #4a5568;">ธนกฤต</div>
+                    <div class="font-bold text-lg text-[#2d3748]">0980086337</div>
+                    <div class="text-xs text-gray-500">ธนกฤต</div>
                 </div>
 
-                <div class="virtual-card rounded-2xl p-4" style="background-color: #FEF4DD; border: 1px solid #CAE4F4;" onclick="copyText('0936207180', this)">
+                <div class="virtual-card rounded-2xl p-4 bg-[#EBFAFF] border border-[#CAE4F4]" onclick="copyText('0936207180', this)">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold" style="color: #2d3748;">TrueMoney</span>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full" style="background-color: #CAE4F4;">คัดลอก</span>
+                        <span class="font-bold text-[#2d3748]">TrueMoney ⭐</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#CAE4F4] text-[#2d3748]">คัดลอก</span>
                     </div>
-                    <div class="font-bold text-lg" style="color: #2d3748;">0936207180</div>
-                    <div class="text-xs" style="color: #4a5568;">ชนัญญา</div>
+                    <div class="font-bold text-lg text-[#2d3748]">0936207180</div>
+                    <div class="text-xs text-gray-500">ชนัญญา</div>
                 </div>
 
-                <div class="virtual-card rounded-2xl p-4 shadow-md" style="background-color: #CAE4F4;" onclick="copyText('เติมเกมLeo', this)">
+                <div class="virtual-card rounded-2xl p-4 shadow-md bg-[#CAE4F4]" onclick="copyText('เติมเกมLeo', this)">
                     <div class="flex justify-between items-center">
-                        <span class="font-bold" style="color: #2d3748;">โน๊ตสลิป: เติมเกมLeo</span>
+                        <span class="font-bold text-[#2d3748]">โน๊ตสลิป: เติมเกมLeo 📝</span>
                         <span class="text-[10px] px-2 py-0.5 rounded-full bg-white">คัดลอก</span>
                     </div>
                 </div>
 
-                <div class="rounded-2xl p-3 border-2 border-red-500 text-center">
-                    <p class="text-red-600 font-bold text-sm">โอนวอที่ลีโอแจ้งเท่านั้นนะคั้บ โอนผิดยึดยอดเท่านั้น</p>
+                <div class="rounded-2xl p-3 border-2 border-red-300 text-center bg-red-50">
+                    <p class="text-red-500 font-bold text-sm">⚠️ โอนวอดิโอลีโอแจ้งเท่านั้นนะคั้บ โอนผิดยึดยอดเท่านั้น</p>
                 </div>
                 
-                <div class="text-center font-bold text-[#CAE4F4]">เติมเกมไว้ใจ Nyxor</div>
+                <div class="text-center font-bold text-[#CAE4F4]">เติมเกมไว้ใจ Nyxor ❤️✨</div>
             </div>
         </div>
     </div>
