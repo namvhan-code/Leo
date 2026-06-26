@@ -11,18 +11,27 @@
     <style>
         body {
             font-family: 'Prompt', sans-serif;
-            background: linear-gradient(135deg, #FEF4DD 0%, #EBFAFF 100%);
+            background: linear-gradient(135deg, #EBFAFF 0%, #FEF4DD 100%);
             min-height: 100vh;
-            margin: 0;
-            padding: 0;
         }
         
-        @keyframes float-up-down { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-15px) rotate(10deg); } }
-        @keyframes float-left-right { 0%, 100% { transform: translateX(0px) rotate(0deg); } 50% { transform: translateX(15px) rotate(-10deg); } }
-        @keyframes pulse-soft { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.1); opacity: 1; } }
+        @keyframes float-up-down {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+        }
+        @keyframes float-left-right {
+            0%, 100% { transform: translateX(0px) rotate(0deg); }
+            50% { transform: translateX(15px) rotate(-10deg); }
+        }
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
         @keyframes spin-slow { 100% { transform: rotate(360deg); } }
-        @keyframes dash-animation { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -24; } }
-        
+        @keyframes dash-animation {
+            from { stroke-dashoffset: 0; }
+            to { stroke-dashoffset: -24; }
+        }
         .animate-dash { animation: dash-animation 1s linear infinite; }
         .anim-float-1 { animation: float-up-down 4s ease-in-out infinite; }
         .anim-float-2 { animation: float-up-down 5s ease-in-out infinite 1.5s; }
@@ -34,56 +43,95 @@
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 1);
-            box-shadow: 0 20px 50px -10px rgba(138, 180, 204, 0.2);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid #CAE4F4;
+            box-shadow: 0 20px 50px -10px rgba(202, 228, 244, 0.3);
         }
-
-        .virtual-card { transition: all 0.3s ease; }
+        .virtual-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .virtual-card:hover { transform: translateY(-4px); }
+        .virtual-card:active { transform: translateY(2px) scale(0.98); }
+        ::-webkit-scrollbar { width: 0px; }
     </style>
+    
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { pink: { 500: '#CAE4F4', 600: '#a3cce6', 700: '#5c3d26' } } } }
+        }
+    </script>
 </head>
-<body class="flex flex-col items-center py-6 px-4 text-[#5c7d9e]">
+<body class="flex flex-col items-center py-6 px-4 text-slate-800 relative overflow-x-hidden">
 
-    <div id="toast" style="display:none;" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-[#CAE4F4] text-[#5c7d9e] px-6 py-3 rounded-full shadow-xl z-50 font-bold">
-        คัดลอกเลขบัญชีแล้ว!
-    </div>
-
-    <div class="max-w-[420px] w-full space-y-5">
-        <div class="text-center">
-            <h1 class="text-2xl font-bold text-[#5c7d9e]">Nyxor STORE</h1>
-            <p class="text-sm text-[#CAE4F4] font-bold">Payment & Checkout</p>
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
         </div>
 
-        <div class="glass-card rounded-[40px] p-6">
-            <div class="space-y-4">
-                <div class="bg-[#EBFAFF] p-4 rounded-2xl border-2 border-[#CAE4F4]">
-                    <p class="text-center font-bold">ชื่อบัญชี: ธนกฤต แซ่จิว</p>
+    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-blue-500/95 backdrop-blur-sm text-white px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm">
+        คัดลอกเลขบัญชีแล้ว
+    </div>
+
+    <div class="max-w-[420px] w-full relative z-10 space-y-5 pb-10">
+        <div class="text-center pt-2 pb-2 relative">
+            <h1 class="text-2xl font-bold tracking-tight text-blue-500">Nyxor</h1>
+            <p class="text-sm font-medium text-blue-400 mt-1">Payment & Checkout</p>
+        </div>
+
+        <div class="glass-card rounded-[40px] p-3 relative z-10">
+            <div class="relative p-2 rounded-[36px] z-10">
+                <div class="rounded-[28px] overflow-hidden relative shadow-sm border-[4px] border-white">
+                    <img src="https://blogger.googleusercontent.com/img/a/EjK1lbCmFjVvWus7pqJklqC2LxPN5of1tc7dRQb8V_F1tN-2H63jHf0VU72JrDl4zD0Rt4aJicT18E0lU9Xyx87cnP7OOGS0o9tyY1H-bgrB85PIpdx8kcoVBXdJpevYkCPUNF5rJUTpUxwFl42Qjw==.jfif" alt="Nyxor Payment" class="w-full h-auto object-cover">
+                </div>
+            </div>
+
+            <div class="p-4 pt-6 space-y-5">
+                <div class="text-center space-y-3">
+                    <p class="text-[15px] font-medium text-slate-700">
+                        เลขบัญชีตามนี้เลยค่า <br>
+                        ชื่อบัญชี <span class="text-blue-600 font-bold">ธนกฤต แซ่จิว</span> เท่านั้นน้า!!
+                    </p>
                 </div>
 
-                <div class="virtual-card bg-[#CAE4F4] rounded-[24px] p-5 cursor-pointer border border-[#CAE4F4]" onclick="copyText('898-235317-9')">
-                    <p class="text-xs font-bold text-[#5c7d9e]/70">SCB</p>
-                    <p class="text-2xl font-bold">898-235317-9</p>
+                <div class="space-y-4">
+                    <div class="virtual-card bg-blue-100 rounded-[24px] p-5 cursor-pointer border border-blue-200" onclick="copyText('898-235317-9', this)">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-blue-800">SCB</span>
+                            <button class="bg-white text-blue-600 text-xs px-3 py-1 rounded-full font-bold">คัดลอก</button>
+                        </div>
+                        <div class="text-xl font-bold text-blue-900 tracking-widest">898-235317-9</div>
+                    </div>
+
+                    <div class="virtual-card bg-orange-50 rounded-[24px] p-5 cursor-pointer border border-orange-200" onclick="copyText('0980086337', this)">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-orange-800">TrueMoney (ธนกฤต)</span>
+                            <button class="bg-white text-orange-600 text-xs px-3 py-1 rounded-full font-bold">คัดลอก</button>
+                        </div>
+                        <div class="text-xl font-bold text-orange-900 tracking-widest">0980086337</div>
+                    </div>
+
+                    <div class="virtual-card bg-orange-50 rounded-[24px] p-5 cursor-pointer border border-orange-200" onclick="copyText('0936207180', this)">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-orange-800">TrueMoney (ชนัญญา)</span>
+                            <button class="bg-white text-orange-600 text-xs px-3 py-1 rounded-full font-bold">คัดลอก</button>
+                        </div>
+                        <div class="text-xl font-bold text-orange-900 tracking-widest">0936207180</div>
+                    </div>
                 </div>
 
-                <div class="virtual-card bg-[#FEF4DD] rounded-[24px] p-5 cursor-pointer border border-[#FEF4DD]" onclick="copyText('0980086337')">
-                    <p class="text-xs font-bold text-[#5c7d9e]/70">TrueMoney (ธนกฤต)</p>
-                    <p class="text-2xl font-bold">0980086337</p>
+                <div class="bg-red-50 p-4 rounded-2xl text-center text-red-600 font-bold">
+                    โอนวอที่ลีโอแจ้งเท่านั้นนะคั้บ โอนผิดยึดยอดเท่านั้น
                 </div>
 
-                <div class="virtual-card bg-[#FEF4DD] rounded-[24px] p-5 cursor-pointer border border-[#FEF4DD]" onclick="copyText('0936207180')">
-                    <p class="text-xs font-bold text-[#5c7d9e]/70">TrueMoney (ชนัญญา)</p>
-                    <p class="text-2xl font-bold">0936207180</p>
+                <div class="text-center font-bold text-blue-500 pt-4">
+                    เติมเกมไว้ใจ Nyxor
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        function copyText(text) {
+        function copyText(text, element) {
             navigator.clipboard.writeText(text);
             const toast = document.getElementById('toast');
-            toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 2000);
+            toast.style.opacity = '1';
+            setTimeout(() => { toast.style.opacity = '0'; }, 2000);
         }
     </script>
 </body>
