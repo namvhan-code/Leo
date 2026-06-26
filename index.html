@@ -13,67 +13,70 @@
             background: linear-gradient(135deg, #CAE4F4, #EBFAFF);
             min-height: 100vh;
         }
-        .card-bg { background-color: #ffffff; border: 3px solid #CAE4F4; }
-        .virtual-card { transition: all 0.3s; cursor: pointer; }
-        .virtual-card:hover { transform: translateY(-2px); }
+        .card-bg { background-color: #ffffff; border: 2px solid #CAE4F4; }
+        .virtual-card { transition: all 0.2s; cursor: pointer; }
         .virtual-card:active { transform: scale(0.98); }
         ::-webkit-scrollbar { width: 0px; }
     </style>
 </head>
 <body class="flex flex-col items-center py-6 px-4 text-gray-800">
 
-    <div id="toast" class="fixed bottom-8 bg-[#CAE4F4] text-[#2d3748] px-6 py-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 z-50 font-bold border-2 border-white">
-        คัดลอกข้อมูลเรียบร้อยแล้วค่า ✨
+    <div id="toast" class="fixed bottom-8 bg-[#CAE4F4] text-[#2d3748] px-6 py-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 z-50 font-bold">
+        คัดลอกข้อมูลเรียบร้อย
     </div>
 
     <div class="max-w-[400px] w-full space-y-5">
-        <div class="text-center">
-            <h1 class="text-2xl font-bold text-[#CAE4F4] drop-shadow-sm">Nyxor Store ⭐</h1>
+        <div class="text-center flex justify-center items-center gap-2">
+            <svg class="w-6 h-6 text-[#CAE4F4]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <h1 class="text-2xl font-bold" style="color: #CAE4F4;">Nyxor Store</h1>
+            <svg class="w-6 h-6 text-[#CAE4F4]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         </div>
 
-        <div class="card-bg rounded-[30px] p-4 shadow-xl">
-            <img src="https://lh3.googleusercontent.com/d/1C6-uLxghH6VqzMcymrMpsu6OjEQFUazl" alt="Account" class="w-full rounded-[20px] mb-4 border-2 border-[#CAE4F4]">
+        <div class="card-bg rounded-3xl p-4 shadow-sm">
+            <img src="https://lh3.googleusercontent.com/d/1C6-uLxghH6VqzMcymrMpsu6OjEQFUazl" alt="Account" class="w-full rounded-2xl mb-4">
 
-            <div class="space-y-4">
-                <div class="virtual-card rounded-2xl p-4 bg-[#EBFAFF] border border-[#CAE4F4]" onclick="copyText('898-235317-9', this)">
+            <div class="space-y-3">
+                <div class="virtual-card rounded-2xl p-4" style="background-color: #EBFAFF; border: 1px solid #CAE4F4;" onclick="copyText('898-235317-9', this)">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-[#2d3748]">ธนาคาร SCB ❤️</span>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#CAE4F4] text-[#2d3748]">คัดลอก</span>
+                        <span class="font-bold flex items-center gap-1" style="color: #2d3748;">ธนาคาร SCB <svg class="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full" style="background-color: #CAE4F4;">คัดลอก</span>
                     </div>
-                    <div class="font-bold text-lg text-[#2d3748]">898-235317-9</div>
-                    <div class="text-xs text-gray-500">ธนกฤต แซ่จิว</div>
+                    <div class="font-bold text-lg" style="color: #2d3748;">898-235317-9</div>
+                    <div class="text-xs" style="color: #4a5568;">ธนกฤต แซ่จิว</div>
                 </div>
 
-                <div class="virtual-card rounded-2xl p-4 bg-[#EBFAFF] border border-[#CAE4F4]" onclick="copyText('0980086337', this)">
+                <div class="virtual-card rounded-2xl p-4" style="background-color: #EBFAFF; border: 1px solid #CAE4F4;" onclick="copyText('0980086337', this)">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-[#2d3748]">TrueMoney ⭐</span>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#CAE4F4] text-[#2d3748]">คัดลอก</span>
+                        <span class="font-bold flex items-center gap-1" style="color: #2d3748;">TrueMoney <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full" style="background-color: #CAE4F4;">คัดลอก</span>
                     </div>
-                    <div class="font-bold text-lg text-[#2d3748]">0980086337</div>
-                    <div class="text-xs text-gray-500">ธนกฤต</div>
+                    <div class="font-bold text-lg" style="color: #2d3748;">0980086337</div>
+                    <div class="text-xs" style="color: #4a5568;">ธนกฤต</div>
                 </div>
 
-                <div class="virtual-card rounded-2xl p-4 bg-[#EBFAFF] border border-[#CAE4F4]" onclick="copyText('0936207180', this)">
+                <div class="virtual-card rounded-2xl p-4" style="background-color: #EBFAFF; border: 1px solid #CAE4F4;" onclick="copyText('0936207180', this)">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-[#2d3748]">TrueMoney ⭐</span>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#CAE4F4] text-[#2d3748]">คัดลอก</span>
+                        <span class="font-bold flex items-center gap-1" style="color: #2d3748;">TrueMoney <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full" style="background-color: #CAE4F4;">คัดลอก</span>
                     </div>
-                    <div class="font-bold text-lg text-[#2d3748]">0936207180</div>
-                    <div class="text-xs text-gray-500">ชนัญญา</div>
+                    <div class="font-bold text-lg" style="color: #2d3748;">0936207180</div>
+                    <div class="text-xs" style="color: #4a5568;">ชนัญญา</div>
                 </div>
 
-                <div class="virtual-card rounded-2xl p-4 shadow-md bg-[#CAE4F4]" onclick="copyText('เติมเกมLeo', this)">
+                <div class="virtual-card rounded-2xl p-4 shadow-md" style="background-color: #CAE4F4;" onclick="copyText('เติมเกมLeo', this)">
                     <div class="flex justify-between items-center">
-                        <span class="font-bold text-[#2d3748]">โน๊ตสลิป: เติมเกมLeo 📝</span>
+                        <span class="font-bold" style="color: #2d3748;">โน๊ตสลิป: เติมเกมLeo</span>
                         <span class="text-[10px] px-2 py-0.5 rounded-full bg-white">คัดลอก</span>
                     </div>
                 </div>
 
-                <div class="rounded-2xl p-3 border-2 border-red-300 text-center bg-red-50">
-                    <p class="text-red-500 font-bold text-sm">⚠️ โอนวอตามที่ลีโอแจ้งเท่านั้นนะคั้บ โอนผิดยึดยอดเท่านั้น</p>
+                <div class="rounded-2xl p-3 border-2 border-red-500 text-center">
+                    <p class="text-red-600 font-bold text-sm">โอนวอตามที่ลีโอแจ้งเท่านั้นนะคั้บ โอนผิดยึดยอดเท่านั้น</p>
                 </div>
                 
-                <div class="text-center font-bold text-[#CAE4F4]">เติมเกมไว้ใจ Nyxor ❤️✨</div>
+                <div class="text-center font-bold flex justify-center items-center gap-1" style="color: #CAE4F4;">
+                    เติมเกมไว้ใจ Nyxor <svg class="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
             </div>
         </div>
     </div>
